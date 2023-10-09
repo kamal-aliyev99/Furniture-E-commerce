@@ -1,0 +1,31 @@
+@import '../../assets/styles/style-variables.scss';
+
+.input{
+    position: relative;
+    @extend %width-446;
+    .div__input{
+        width: 100%;
+        height: 5.4rem;
+        @include fontStyle;
+        padding: 1.7rem 2rem;
+        @extend %border-radius-10;
+        background-color: $color__background;
+        @include borders($color__dusty-rose);
+        &::placeholder{
+            color: $color__grey;
+            @extend %upperCase;
+        }
+    }
+    .invalid-text{
+        @include fontStyle (1.4rem);
+        color: #DC4F4F;
+    }
+    svg{
+        position: absolute;
+        top: 1.5rem;
+        right: 2rem;
+    }
+    &.invalid svg:not(.invalid-logo){
+        display: none;
+    }
+}

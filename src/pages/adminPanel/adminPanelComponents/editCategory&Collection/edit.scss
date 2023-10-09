@@ -1,0 +1,36 @@
+@import '../../../../assets/styles/style-variables.scss';
+
+.editCC{
+    border-radius: 3rem;
+    border: 1px solid $color__dusty-rose;
+    padding: 2rem;
+    @extend %flex-column;
+    gap: 3rem;
+    .addCC{
+        @extend %flex-column;
+        gap: 2rem;
+    }
+    .deleteCC{
+        @extend %flex-column;
+        gap: 2rem;
+        .deleteCC__item{
+            @extend %flex-between;
+            gap: 2rem;
+            align-items: center;
+            border: 1px dashed $color__dusty-rose;
+            @extend %border-radius-10;
+            padding: 2rem;
+            .deleteCC__item--photo{
+                @extend %border-radius-10;
+                overflow: hidden;
+                line-height: 0;
+                img{
+                    width: 20rem;
+                }
+            }
+            .deleteCC__item--text{
+                @include fontStyle(2rem, 2.8rem)
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import '../../assets/styles/style-variables.scss';
+
+.headingSection{
+    margin-bottom: 5rem;
+    @extend %width-563;
+    .headingSection__p{
+        margin-top: 4.6rem;
+    }
+}
+
+
+@media screen and (max-width:320px) {
+    .headingSection{
+        margin-bottom: 4rem;
+        .headingSection__p{
+            margin-top: 3rem;
+        }
+    }
+}

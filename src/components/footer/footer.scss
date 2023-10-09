@@ -1,0 +1,42 @@
+@import '../../assets/styles/style-variables.scss';
+
+.footer{
+    padding-bottom: 2rem;
+    margin-top: 15rem !important;
+    .footer__main{
+    @extend %flex-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+        .footer__icon{
+            @include fontStyle(5.2rem, 5.8rem, 400, $font-didot);
+            flex: 1;
+        }
+            
+        .footer__about{
+            @extend %flex-between;
+            align-items: center;
+            @include widths(80rem);
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            flex: 2;
+            *{
+                flex-basis: 25rem;
+                &:not(:first-child){
+                text-align: center;
+                }
+            }
+
+        }
+    }
+
+    .footer__copyright{
+        @include fontStyle(1.2rem, 1.8rem, 400);
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .footer{
+        margin-top: 10rem !important;
+    }
+}

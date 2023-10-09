@@ -1,0 +1,221 @@
+@import '../../assets/styles/style-variables.scss';
+
+.homePage{
+
+  .titleSection{
+    @extend %flex-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 2rem;
+    min-height: 80vh;
+    height: max-content;
+    margin-top: 1.5rem !important;
+    .titleSection__text{
+      flex-basis: min( 100%, 44.6rem );
+      min-height: max(100%, max-content);
+      display: flex;
+      align-items: center;
+
+      .titleSection__heading{
+        width: min(90%, 83rem);
+        overflow-wrap: break-word;
+        position: absolute; 
+        z-index: 1;
+        word-wrap:break-word;
+      }
+      .titleSection__additional{
+        @extend %flex-column;
+        @extend %width-446;
+        gap: 4rem;
+      }
+    }
+    .titleSection__image{
+      width: max(40%, 50rem);
+      height: 80vh;
+      position: relative;
+      @extend %border-radius-10;
+      overflow: hidden;
+      flex-grow: 1;
+      .titleSection__image--blur{
+        @include absolute ("top", "left", 0, 0);
+        @extend %backdrop-blur;
+        width: min(40%, 33rem);
+        height: 100%;
+      }
+    }
+  }
+
+
+  .HomePage__aboutSection {
+    margin-top: 12.8rem !important;
+    .aboutSection{
+      margin-top: 5rem;
+    }
+  }
+
+
+  .discountSection{
+    background: $color__dusty-rose no-repeat 20% 64%;
+    background-image: url(../../assets/images/discount.png);
+    margin-top: 14rem;
+    .discountSection__items{
+      color: $color__white;
+      @extend %flex-center;
+      flex-direction: column;
+      gap: 3.6rem;
+      padding-block: 6.2rem;
+      .discountSection__heading{
+        color: inherit;
+      }
+      .discountSection__p{
+        @include widths(44.5rem);
+      }
+      .btn{
+        margin-top: 0.6rem;
+      }
+    }
+
+    .discountSection__background{
+      width: 100%;
+      height: 100%;
+      @extend %backdrop-blur;
+    }
+  }
+
+
+  .productsSection{
+    margin-top: 12.8rem !important;
+    position: relative;
+    .productsSection__items{
+      margin-top: 5.9rem;
+    }
+
+  }
+
+
+  .popularSection{
+    margin-top: 12.8rem !important;
+    .slide{
+      .card{
+        .card__image{
+          width: 33rem;
+        }
+      }
+    }
+  }
+
+
+  .collectionsSection{
+    margin-top: 12rem !important;
+    padding-block: 8.1rem 7.4rem;
+    background-color: #{$color__dusty-rose}48;
+    .collectionsSection__background{
+      position: relative;
+      
+    }
+  }
+
+
+  .seeAll{
+    color: $color__primary;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: 500;
+    @include absolute("top", "right", 1rem, 0);
+    transition: 200ms;
+    &:hover{
+      color: $color__primary-hover;
+    }
+  }
+
+
+  .contactSection{
+    margin-top: 12.8rem !important;
+  }
+
+
+}
+//                                                       M o b i l e 
+
+@media screen and (max-width:320px) {
+.homePage{  
+  .titleSection{
+    gap: 5rem;
+    .titleSection__image{
+      height: 24rem;
+      .titleSection__image--blur{
+        display: none;
+      }
+    }
+  }
+
+  .HomePage__aboutSection {
+    margin-top: 7rem !important;
+    .aboutSection{
+      margin-top: 2.5rem;
+    }
+  }
+
+  .discountSection{
+    margin-top: 7rem;
+    .discountSection__items{
+      padding-block: 6rem 8.3rem;
+      gap: 3rem;
+    }
+  }
+
+  .productsSection{
+    margin-top: 7rem !important;
+    .productsSection__items{
+      margin-top: 3rem;
+      .productsList{
+        display: flex;
+        gap: 2rem;
+        overflow: auto;
+        &::-webkit-scrollbar{
+          display: none;
+        }
+        .card{
+          .card__image{
+            width: 21.1rem;
+            height: 17.1rem;
+          }
+        }
+      }
+    }
+  }
+
+
+  .popularSection{
+    margin-top: 7rem !important;
+    .slide{
+      .card{
+        .card__image{
+          width: 21.1rem;
+          height: 17.1rem;
+        }
+      }
+    }
+  }
+
+
+  .collectionsSection{
+    margin-top: 7rem !important;
+    padding-block: 4rem;
+    .seeAll{
+      display: block;
+      margin-top: 3.3rem;
+    }    
+  }
+
+
+  .contactSection{
+    margin-top: 5rem !important;
+  }
+
+
+  .seeAll{
+    position: static;
+  }
+}
+}

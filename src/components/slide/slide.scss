@@ -1,0 +1,47 @@
+@import '../../assets/styles/style-variables.scss';
+
+.slide{
+    position: relative;
+    .slideParent{
+        width: 100%;
+        margin-top: 6rem;
+        padding-bottom: 8.4rem;
+        overflow-x: scroll;
+        scroll-behavior:smooth;    
+        display: flex;
+        gap: 2rem;
+
+        &::-webkit-scrollbar{
+            height: 4px;
+        }
+        &::-webkit-scrollbar-thumb{
+            border-radius: 2px;
+        } 
+    }
+    .slideMoveArrows{
+        position: absolute;
+        bottom: 1.4rem;
+        right: 1rem;
+        @extend %flex-between;
+        gap: 1.8rem;
+
+        .slideNextArrow{
+            transform: rotate(180deg);
+        }
+
+        *{
+            line-height: 0;
+        }
+    }
+}
+
+@media screen and (max-width:320px) {
+    .slide {
+        .slideParent{
+            margin-top: 3rem;
+        }
+        .cardFolder{
+            width: 21.1rem;
+        }
+    }
+}

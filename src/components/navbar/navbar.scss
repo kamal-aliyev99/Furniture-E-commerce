@@ -1,0 +1,47 @@
+@import '../../assets/styles/style-variables.scss';
+
+.navbar{
+    text-transform: capitalize;
+    @extend %flex-between;
+    flex-wrap: wrap;
+    gap: 3.4rem;
+    line-height: 2rem;
+    grid-column: 1/ -1;
+    padding-bottom: 1rem;
+
+    @include widths(68.5rem);
+    a{
+        position: relative;
+        width: min-content;
+        padding-bottom: 1rem;
+        
+        &::after{
+            content: "";
+            width: 0;
+            height: 1px;
+            background-color: $color__primary;
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transition: 300ms;
+        }
+        &:hover::after{
+            width: 100%;
+            transform: translateX(-50%);
+        }
+    }
+    .currentPath{
+        border-bottom: 1px solid $color__primary;
+    }
+    
+}
+
+@media screen and (max-width:320px) {
+    .navbar{
+        display: none;
+        flex-direction: column;
+        a{
+            @include fontStyle(3.2rem, 2rem, 400);
+        }
+    }
+}

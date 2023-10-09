@@ -1,0 +1,46 @@
+@import '../../assets/styles/style-variables.scss';
+
+.card{
+    @extend %flex-column;
+    @extend %width-330;
+    gap: 2.2rem;
+    position: relative;
+    .card__image{
+        width: min(100%, 33rem);
+        height: 26.7rem;
+        @extend %border-radius-10;
+        overflow: hidden;
+        img{
+            transition: 300ms;
+        }
+        &:hover{
+            img{
+                transform: scale(1.1);
+            }
+        }
+    }
+    .card__txt{
+        @include fontStyle(2rem, 2.8rem)
+    }
+    .card__price{
+        @include fontStyle(2rem, 2.8rem, 700);
+        color: $color__primary;
+    }
+    .card__wish{
+        @include absolute("top", "right", 1.5rem, 1.5rem);
+        background-color: $color__white;
+        @include width-height(4.6rem, 3.8rem);
+        @extend %flex-center;
+        border-radius: 0.5rem;
+    }
+
+}
+
+@media screen and (max-width:320px) {
+    .card{
+        gap: 1.5rem;
+        .card__image{
+            height: 23.3rem;
+        }
+    }
+}

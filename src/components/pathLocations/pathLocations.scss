@@ -1,0 +1,33 @@
+@import '../../assets/styles/style-variables.scss';
+
+.pathLocations{
+    margin-block: 5rem;
+    display: flex;
+    gap: 4rem;
+    > a{
+        color: #{$color__black}80;
+        position: relative;
+        text-transform: capitalize;
+        line-height: 100%;
+
+        &:hover, &:last-child{
+            color: $color__black;
+        }
+        &:not(:first-child)::before{
+            content: "";
+            position: absolute;
+            left: -2rem;
+            bottom: 0;
+            width: 0;
+            height: 100%;
+            border: 1px solid #{$color__black}50;
+        }
+    }
+    
+}
+
+@media screen and (max-width:320px) {
+    .pathLocations{
+    margin-block: 4rem;
+    }
+}

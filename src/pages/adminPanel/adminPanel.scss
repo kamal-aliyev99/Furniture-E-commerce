@@ -1,0 +1,45 @@
+@import '../../assets/styles/style-variables.scss';
+
+.adminPanel{
+
+    > *{
+        margin-block: 3rem;
+    }
+    .AP__header{
+        @extend %flex-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .AP__navbar{
+        @extend %flex-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+}
+
+.adminPanel__login--background{
+    @extend %flex-center;
+    height: 100vh;
+    .adminPanel__login{
+        @extend %width-446;
+        margin-inline: 2.5%;
+        background-color: #{$color__dusty-rose}88;
+        padding: 3rem 3rem 5rem;
+        @extend %border-radius-10;
+
+        .adminPanel__login--heading{
+            margin-top: 3rem;
+        }
+        .adminPanel__login--form{
+            @extend %flex-column;
+            gap: 2rem;
+            margin-top: 3rem;
+            .btn{
+                width: 100%;
+            }
+        }
+    }
+}

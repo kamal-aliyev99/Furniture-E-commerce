@@ -1,0 +1,31 @@
+@import '../../assets/styles/style-variables.scss';
+
+.wishlist{
+    @extend %flex-column;
+    gap: 2rem;
+    flex: 1;
+    .wishlist__card{
+        @extend %flex-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        .wishlist__card--image{
+            width: 21.4rem;
+            height: 15rem;
+            @extend %border-radius-10;
+            overflow: hidden;
+        }
+        .wishlist__card--text{
+            @extend %flex-column;
+            gap: 2.2rem;
+            flex: 1;
+            .wishlist__card--name{
+                @include fontStyle(2rem, 2.8rem);
+            }
+            .wishlist__card--price{
+                @include fontStyle(2rem, 2.8rem, 700);
+                color: $color__primary;
+            }
+        }
+    }
+}

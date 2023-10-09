@@ -1,0 +1,47 @@
+@import '../../assets/styles/style-variables.scss';
+
+.contactSection__items{
+    margin-top: 5.9rem !important;
+    @extend %flex-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+
+    .contactSection__form{
+        @extend %flex-column;
+        gap: 1.5rem;
+        @extend %width-563;
+        
+        .input, .btn{
+            width: 100%;
+        }
+        .btn{
+            margin-top: 0.5rem;
+        }
+        textarea{
+            height: 13.6rem;
+        }
+    }
+    .contactSection__image{
+        @extend %width-680;
+        height: 41.7rem;
+        border-radius: 0.5rem 0.5rem 30rem 0.5rem;
+        overflow: hidden;
+        line-height: 0;
+    }
+}
+
+
+@media screen and (max-width:320px) {
+    .contactSection__items{
+        margin-top: 3rem !important;
+        .contactSection__form{
+            .btn{
+                display: none;
+            }
+        }
+        .contactSection__image{
+            height: 17.7rem;
+        }
+    }
+}

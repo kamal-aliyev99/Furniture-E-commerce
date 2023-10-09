@@ -1,0 +1,42 @@
+@import '../../styles/style-variables.scss';
+
+
+.icon-hamburger{
+    display: inline-block;
+    box-sizing: content-box;
+    width: 2rem;
+    height: 1.1rem;
+    border-top: 3px solid $color__black;
+    border-bottom: 3px solid $color__black;
+    border-radius: 0.8px;
+    transition: 300ms;
+    position: relative;
+
+    &::before, &::after{
+        content: "";
+        width: 100%;
+        height: 2px;
+        border-radius: 0.5px;
+        background-color: $color__black;
+        position: absolute;
+        top: 0.45rem;
+        left: 0;
+        transition: 300ms;
+    }
+
+    &.active{
+        border: 0;
+        &::before, &::after{
+            width: 130%;
+            left: -15%;
+        }
+        &::before{
+            transform: rotate(45deg);
+        }   
+        &::after{
+            transform: rotate(-45deg);
+        }
+    }
+
+    
+}

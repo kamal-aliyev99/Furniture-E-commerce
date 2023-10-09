@@ -1,0 +1,97 @@
+@import '../../assets/styles/style-variables.scss';
+
+.header__backg{
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0 0 1rem $color__background;
+    background-color: $color__background;
+    .header{
+        display: grid;
+        grid-template-columns: auto auto 1fr auto auto ;
+        column-gap: 2%;
+        row-gap: 2.7rem;
+        align-items: center;
+        justify-items: center;
+        padding-top: 1.8rem;
+
+        .header__icon{
+            @include fontStyle(3.6rem, 4rem, 400, $font-didot);
+        }
+        .header__basket{
+            position: relative;
+            .header__basket--count{
+                @include absolute("top", "right", -0.3rem, -0.5rem);
+                @include fontStyle(1.2rem, 0, 400);
+                background-color: $color__black;
+                color: $color__background;
+                @extend %flex-center;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+            }
+        }
+
+        .navbar__hamburger{
+            display: none;
+        }
+    }
+
+}
+
+@media screen and (max-width:320px) {
+    .header__backg{
+        .header{
+            > *{ display: none; }
+            grid-template-columns: 1fr auto auto ;
+            justify-items: start;
+            column-gap: 2.5rem;
+            padding-bottom: 1rem;
+            flex-basis: auto;
+
+            .header__search{
+                display: initial;
+            } 
+
+            .header__icon{
+                display: initial;
+                @include fontStyle(2.8rem, 3.2rem, 400, $font-didot);
+                grid-row: 1 / span 1;
+            } 
+
+            .navbar__hamburger{
+                display: initial;
+            } 
+
+            &.activeMenu{
+                > *{ display: none; }
+                grid-template-columns: auto auto 1fr ;
+                position: absolute;
+                margin-top: 0;
+                z-index: 5;
+                background-color: $color__background;
+                width: 100%;
+                padding: 1.8rem 5% 8rem;
+
+                .header__lang{
+                    display: initial;
+                    grid-area: 3 / 1 / span 3 / -1;
+                } 
+
+                .header__basket, .header__user{
+                    display: initial;
+                } 
+        
+                .navbar__hamburger{
+                    display: initial;
+                    justify-self: end;
+                } 
+        
+                .navbar{
+                    display: flex;
+                } 
+            }
+        }
+    }
+}

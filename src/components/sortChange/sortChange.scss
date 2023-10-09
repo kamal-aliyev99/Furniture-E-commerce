@@ -1,0 +1,61 @@
+@import '../../assets/styles/style-variables.scss';
+
+.sort{
+    position: relative;
+    .sort__list{
+        background-color: $color__background;
+        @extend %flex-column;
+        gap: 1.5rem;
+        @extend %width-330;
+        padding: 3.2rem 2rem 2.2rem;
+        @include borders;
+        @extend %border-radius-10;
+        position: absolute;
+        top: 3.4rem;
+        z-index: 5;
+        transition: 0.5s;
+        overflow: hidden;
+        .sort__list--item{
+            @include fontStyle;
+            color: $color__primary;
+            text-transform: uppercase;
+            
+            &:hover{
+                color: $color__primary-hover;
+            }
+        }
+        
+    }
+    &.deactive{
+        .sort__list{
+            height: 0 !important;
+            padding: 0 2rem;
+        }
+        .btn{
+            .iconArrowSmall{
+                transform: scale(1, 1);
+            }
+        }
+    }
+    .btn{
+        position: relative;
+        z-index: 6;
+        .iconArrowSmall{
+            transition: 200ms;
+            transform: scale(1, -1);
+        }
+    }
+}
+
+
+@media screen and (max-width:320px) {
+    .sort{
+        .btn{
+            justify-content: space-between;
+            padding-inline: 2rem;
+            svg{
+                order: 1;
+            }
+        }
+    }
+}

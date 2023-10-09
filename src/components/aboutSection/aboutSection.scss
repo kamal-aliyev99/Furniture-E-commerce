@@ -1,0 +1,39 @@
+@import '../../assets/styles/style-variables.scss';
+
+.aboutSection {
+    .aboutSection__items{
+      @extend %flex-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6.6rem;
+      .aboutSection__image{
+        @extend %width-680;
+        height: 41.2rem;
+        border-radius: 30rem 0.5rem 0.5rem 0.5rem;
+        overflow: hidden;
+      }
+      .aboutSection__text{
+        @extend %width-563;
+        @extend %flex-column;
+        gap: 4.4rem;
+        .aboutSection__p{
+            @extend %flex-column;
+            gap: 2rem;
+        }
+      }
+    }
+}
+
+@media screen and (max-width:320px) {
+    .aboutSection{
+        .aboutSection__items{
+          gap: 3rem;
+          .aboutSection__image{
+            height: 17.4rem;
+          }
+          .aboutSection__text{
+            gap: 4rem;
+          }
+        }
+    }
+}

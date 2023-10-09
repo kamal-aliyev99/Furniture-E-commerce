@@ -1,0 +1,24 @@
+@import '../../assets/styles/style-variables.scss';
+
+.aboutPage{
+    .headingSection{
+        width: 100%;
+    }  
+    .statistics{
+        margin-top: 13rem;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 7rem;
+        .statistics__items{
+            text-align: center;
+            text-transform: uppercase;
+            .statistics__count{
+                color: $color__primary;
+            }
+            .statistics__name{
+                @include fontStyle(2rem, 2.8rem);
+                margin-top: 1.7rem;
+            }
+        }
+    }
+}

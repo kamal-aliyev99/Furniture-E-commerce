@@ -1,0 +1,49 @@
+@import './assets/styles/style-variables.scss';
+
+
+
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  background-color: $color__background;
+  @include fontStyle(1.6rem, 2.4rem, 400);
+  color: var(--color__black);
+  &::-webkit-scrollbar-thumb{
+    box-shadow: 1px 0 4px 1px inset $color__primary-hover;
+    &:hover{
+      box-shadow: 1px 0 4px 1px inset $color__primary;
+    }
+    
+  }
+
+  // margin: 5rem;  // test
+}
+
+::-webkit-scrollbar{
+  width: 1.4rem;
+}
+::-webkit-scrollbar-thumb{
+  background-color: $color__primary;
+  border-radius: 8px;
+  &:hover{
+    background-color: $color__primary-hover;
+  }
+}
+::-webkit-scrollbar-track{ 
+  background-color: rgba(212, 200, 190, 0.5);
+}
+
+::selection{
+  background-color: $color__primary;
+  color: $color__background;
+}

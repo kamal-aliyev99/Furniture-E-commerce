@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=GFS+Didot&family=Raleway:wght@400;500;600;700&display=swap');
+
+$color__background: #EAE6DF;
+$color__grey: #B0B0B0;
+$color__dusty-rose: #D4C8BE;
+$color__primary: #B8926A;
+$color__primary-hover: #A5825D;
+$color__white: #ffffff;
+$color__black: #2D2D2B;
+
+$font-didot: 'GFS Didot', serif;
+$font-raleway: 'Raleway', sans-serif;
+
+
+//  M I X I N 
+
+@mixin fontStyle ($fSize:1.6rem, $lHeight:2rem, $fWeight:500, $fFamily: $font-raleway){
+    font-size: $fSize;
+    line-height: $lHeight;
+    font-weight: $fWeight;
+    font-family: $fFamily;
+}
+
+@mixin width-height ($width, $height){
+    // width: min(100%, $width);
+    @include widths($width);
+    height: $height;
+}
+
+@mixin widths ($width) {
+    width: min(100%, $width);
+}
+
+@mixin borders ($color:$color__primary) { border: 1px solid $color;}
+
+@mixin absolute ($direction-Y, $direction-X, $top-bottom, $left-right) {
+    position: absolute;
+    @if($direction-Y == "top"){
+        top: $top-bottom;
+    } @else if($direction-Y == "bottom"){
+        bottom: $top-bottom;
+    }
+    @if($direction-X == "left"){
+        left: $left-right;
+    } @else if($direction-X == "right"){
+        right: $left-right;
+    }
+}
+
+
+%color-primary-hover{
+    &:hover{
+        color: $color__primary-hover;
+    }
+}
+
+%inline-block{display: inline-block;}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+%flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+
+%width-214 { @include widths(21.4rem);}
+%width-330 { @include widths(33rem);}
+%width-446 { @include widths(44.6rem);}
+%width-563 { @include widths(56.3rem);}
+%width-680 { @include widths(68rem);}
+
+
+%border-radius-10{ border-radius: 1rem; }
+
+%backdrop-blur{
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(7.5px);
+}
+
+%upperCase {text-transform: uppercase;}
+

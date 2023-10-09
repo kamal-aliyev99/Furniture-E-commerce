@@ -1,0 +1,18 @@
+@import '../../assets/styles/style-variables.scss'; 
+
+.login__back{
+    @include fontStyle (1.6rem, 1.8rem, 600);
+    @extend %upperCase;
+    color: $color__primary;
+    @extend %flex-center;
+    width: min-content;
+    gap: 2rem;
+    cursor: pointer;
+    
+    &:hover{
+        color: $color__primary-hover;
+        svg{
+            background-color: $color__primary-hover;
+        }
+    }
+}

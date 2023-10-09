@@ -1,0 +1,52 @@
+@import '../../assets/styles/style-variables.scss';
+
+.accountPage{
+    .accountMain{
+        // @extend %flex-between;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 13.7rem;
+        .accountSection{
+            @extend %width-330;
+            background-color: #{$color__dusty-rose}88;
+            @extend %border-radius-10;
+            padding: 4rem 3rem 5.5rem;
+            height: max-content;
+            .accountSection__items{
+                @extend %flex-column;
+                gap: 3rem;
+                align-items: start;
+                margin-top: 5rem;
+                button{
+                    @extend %flex-center;
+                    gap: 1.5rem;
+                    @extend %upperCase;
+                    font-weight: 500;
+                    &.accountSection__selected{
+                        font-weight: 600;
+                    }
+                }
+                .accountSection__hr{
+                    width: 100%;
+                    height: 1px;
+                    background-color: $color__background;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:320px) {
+
+    .accountPage{
+        .accountMain{
+            gap: 4rem;
+            .accountSection{
+                padding: 3rem 2rem;
+                .accountSection__items{
+                    margin-top: 4rem;
+                }
+            }
+        }
+    }
+}

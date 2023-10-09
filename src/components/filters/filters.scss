@@ -1,0 +1,18 @@
+@import '../../assets/styles/style-variables.scss';
+
+.filter{
+    @extend %flex-column;
+    gap: 2.5rem;
+    .filter__heading{
+        @include fontStyle(2rem, 2.8rem, 600);
+        color: $color__primary;
+        text-transform: uppercase;
+    }
+    .filter__items{
+        @include fontStyle(1.6rem, 2rem, 600);
+        @extend %flex-center;
+        justify-content: start;
+        gap: 2.5rem;
+        text-transform: uppercase;
+    }
+}

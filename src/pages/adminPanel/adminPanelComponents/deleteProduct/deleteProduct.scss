@@ -1,0 +1,43 @@
+@import '../../../../assets/styles/style-variables.scss';
+
+.deleteProduct{
+    border-radius: 3rem;
+    border: 1px solid $color__dusty-rose;
+    padding: 2rem;
+    .deleteProduct__items{
+        margin-top: 3rem;
+        @extend %flex-column;
+        gap: 3rem;
+        .deleteProduct__item{
+            @extend %flex-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            border: 1px dashed $color__dusty-rose;
+            @extend %border-radius-10;
+            padding: 2rem;
+            .deleteProduct__item--photo{
+                @extend %border-radius-10;
+                overflow: hidden;
+                line-height: 0;
+                img{
+                    width: 20rem;
+                }
+            }
+            .deleteProduct__item--text{
+                flex: 1;
+                .deleteProduct__item--name{
+                    @include fontStyle(2rem, 2.8rem)
+                }
+                .deleteProduct__item--price{
+                    @include fontStyle(2rem, 2.8rem, 700);
+                    color: $color__primary;
+                }
+            }
+            .btn{
+                margin-top: 2rem;
+            }
+        }
+    }
+
+}

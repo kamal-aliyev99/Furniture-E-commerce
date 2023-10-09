@@ -1,0 +1,89 @@
+@import '../../assets/styles/style-variables.scss';
+
+.language{
+    @extend %flex-column;
+    width: min-content;
+    transition: 0.3s;
+    text-transform: capitalize;
+    line-height: 2rem;
+    border-radius: 0.5rem;
+    position: relative;
+    input{display: none;}
+    .language__div{
+        @extend %flex-column;
+        position: absolute;
+        width: 3.2rem;
+        top: 1.5rem;
+        z-index: 1;
+        height: 1px;
+        transition: 300ms;
+        overflow: hidden;
+        @include borders($color__dusty-rose);
+        border-radius: 0.5rem;
+        background-color: $color__background;
+    }
+    label{
+        @extend %flex-center;
+        width: 3.2rem;
+        height: 3rem;
+        padding: 0.6rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    > :first-child{
+        z-index: 2;
+        @include borders($color__dusty-rose);
+        background-color: $color__background;
+        &:hover{
+            background-color: $color__dusty-rose;
+        }
+    }
+
+    &.active {
+        > :first-child{
+            background-color: $color__dusty-rose;
+        }
+        .language__div{
+            height: 7.5rem;
+            padding-top: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width:320px) {
+    .language{
+
+
+        > :first-child{
+                background-color: $color__dusty-rose;
+        }
+
+        > :first-child{
+            width: 9.5rem;
+            height: 4.6rem;
+        }
+        .language__div{
+            flex-direction: row;
+            width: auto;
+            height: 4.6rem;
+            top: 0;
+            left: 0;
+            padding-left: 9.5rem;
+            label{
+                width: 9.5rem;
+                height: 4.6rem;
+            }
+        }
+
+
+        &.active {
+            
+            .language__div{
+                height: 100%;
+                padding-top: 0;
+            }
+        }
+    }
+}

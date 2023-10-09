@@ -1,0 +1,24 @@
+@import '../styles/style-variables.scss';
+
+.icon__eye{
+    display: none;
+    cursor: pointer;
+    &.show{
+        display: initial;
+    }
+}
+
+.icon__arrow{
+    svg {
+        background-color: $color__primary;
+        border-radius: 50%;
+        padding: 5px;
+        box-sizing: content-box;
+        &:hover{
+            background-color: $color__primary-hover;
+        }
+    }
+    &:disabled svg{
+        opacity: 0.5;
+    }
+}

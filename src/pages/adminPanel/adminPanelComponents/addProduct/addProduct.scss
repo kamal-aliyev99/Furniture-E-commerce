@@ -1,0 +1,37 @@
+@import '../../../../assets/styles/style-variables.scss';
+
+.addProduct{
+    border-radius: 3rem;
+    border: 1px solid $color__dusty-rose;
+    padding: 2rem;
+    .addProduct__heading{
+        margin-bottom: 3rem
+    }
+    .btn{
+        @extend %width-446
+    }
+    .addProduct__items{
+        @extend %flex-column;        
+        gap: 2rem;
+        textarea.div__input{
+            height: 10rem !important;
+        }
+        select{
+            @extend %width-446;
+            height: 3rem;
+            font-size: 1.8rem;
+        }
+        .addProductPhoto{
+            @extend %flex-column;
+            gap: 1rem;
+            .addPhotoUrls{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                span{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

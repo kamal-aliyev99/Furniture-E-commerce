@@ -1,0 +1,54 @@
+@import '../../assets/styles/style-variables.scss';
+
+
+.page-login{
+    @extend %flex-between;
+    flex-wrap: wrap;
+    height: 100vh;
+    .login__background{
+        @include width-height(82.7rem,100vh);
+        line-height: 0;
+    }
+
+    .login__txt{
+        margin: 3rem;
+        flex-grow: 1;
+        flex-shrink: 0;
+
+        .login__main{
+            margin-top: 18rem;
+
+            .login__form{
+                margin-top: 5rem;
+
+                .login__form--inputs{
+                    @extend %flex-column;
+                    gap: 1.5rem;
+                }
+                .login__forgot{
+                    color: $color__primary;
+                    @include fontStyle(1.4rem, 1.8rem, 500);
+                    @extend %color-primary-hover;
+                    @extend %inline-block;
+                    margin-top: 1rem;
+                }
+                .btn{
+                    @extend %width-446;
+                }
+            }
+            .login__help{
+                display: flex;
+                gap: 2rem;
+                @include fontStyle (1.6rem, 2rem,500);
+                // margin-block: 1.5rem;
+                .login__help--link{
+                    color: $color__primary;
+                    @extend %color-primary-hover;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    
+}

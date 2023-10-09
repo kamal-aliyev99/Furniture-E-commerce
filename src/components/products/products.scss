@@ -1,0 +1,13 @@
+@import '../../assets/styles/style-variables.scss';
+
+.productsList{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(33rem, 1fr) );
+    gap: 4.5rem 2rem ;
+}
+
+@media screen and (max-width:320px) {
+    .productsList{
+        grid-template-columns: 1fr;
+    }
+}

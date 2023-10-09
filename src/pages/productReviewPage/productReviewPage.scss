@@ -1,0 +1,161 @@
+@import '../../assets/styles/style-variables.scss';
+
+.reviewSection{
+    @extend %flex-between;
+    flex-wrap: wrap;
+    gap: 6rem;
+
+    .review__heading--mobileVersion{
+        display: none
+    }
+
+    .review__photos{
+        @extend %flex-column;
+        gap: 2.5rem;
+        @include widths(64rem);
+
+
+        .review__bigPhoto{
+            img{
+                @include widths(64rem);
+                max-height: 40.3rem;
+                @extend %border-radius-10;
+            }
+        }
+        .review__otherPhotos{
+            display: flex;
+            gap: 2.6rem;
+            overflow-x: scroll;
+            img{
+                width: 19.5rem;
+
+                height: 10rem;
+                @extend %border-radius-10;
+                cursor: pointer;
+
+            }
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+    }
+
+    .review__text{
+        @extend %width-680;  // dinamic
+        @extend %flex-column;
+        justify-content: space-between;
+        gap: 3rem;
+        flex: 1;
+
+        .review__p{
+            margin-top: 0.6rem;
+        }
+        .review__color{
+            .review__color--p{
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            .review__color--items{
+                margin-top: 2rem;
+                display: flex;
+                gap: 2.5rem;
+            }
+        }
+        .pieces{
+            margin-top: 0.5rem;
+        }
+        .review__price{
+            color: $color__primary;
+            margin-top: 0.6rem;
+        }
+        .review__btns{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+    }
+}
+
+.similarProducts{
+    margin-top: 12rem;
+    .card{
+        .card__image{
+            width: 33rem;
+            
+        }
+    }
+}
+
+
+@media screen and (max-width:320px) {
+
+    .reviewSection{
+        @extend %flex-between;
+        gap: 3rem;
+    
+        .review__heading--mobileVersion{
+            display: block;
+        }
+
+        .review__photos{
+            gap: 1rem;
+
+            .review__bigPhoto{
+                img{
+                    max-height: 18.5rem;
+                }
+            }
+            .review__otherPhotos{
+                gap: 1.2rem;
+                img{
+                    min-width: 8.8rem;
+                    height: 4.6rem;
+                }
+            }
+        }
+    
+        .review__text{
+            @extend %width-680;
+            @extend %flex-column;
+            gap: 3rem;
+    
+            .review__heading{
+                display: none;
+            }
+            .review__p{
+                margin-top: 0;
+            }
+            .review__color{
+                .review__color--p{
+                    font-weight: 600;
+                }
+                .review__color--items{
+                    margin-top: 2.5rem;
+                    gap: 2.5rem;
+                    
+                }
+            }
+            .pieces{
+                margin-top: 0;
+            }
+            .review__price{
+                margin-top: 0;
+            }
+            .review__btns{
+                gap: 1.5rem;
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    .similarProducts{
+        margin-top: 7rem;
+        .card{
+            .card__image{
+              width: 21.1rem;
+              height: 17.1rem;
+            }
+        }
+    }
+}

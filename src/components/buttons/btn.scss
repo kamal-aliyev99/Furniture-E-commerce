@@ -1,0 +1,38 @@
+@import '../../assets/styles/style-variables.scss';
+
+@mixin btn-colors ($backg, $color: $color__background, $border: null) {
+    background-color: $backg;
+    color: $color;
+    @if $border != null {
+        @include borders($border);
+    }
+}
+
+.btn {
+    @extend %flex-center;
+    @extend %width-330; 
+    @include fontStyle;
+    gap: 2rem; 
+    height: 5.4rem;
+    @extend %border-radius-10;
+    @extend %upperCase;
+    transition: 200ms;
+    cursor: pointer;
+    &.dark {
+        @include btn-colors($color__primary);
+        &:hover{
+            @include btn-colors($color__primary-hover);
+        }
+    }
+    &.light{
+        @include btn-colors($color__background, $color__primary, $color__primary);
+        &:hover{
+            @include btn-colors($color__background, $color__primary-hover, $color__primary-hover)
+        }
+
+    }
+    &.disabled{
+        @include btn-colors($color__grey);
+    }
+}
+

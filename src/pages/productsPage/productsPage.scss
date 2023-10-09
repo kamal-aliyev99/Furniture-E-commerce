@@ -1,0 +1,74 @@
+@import '../../assets/styles/style-variables.scss';
+
+.productsPage{
+    .productsPage__headingSection{
+        @extend %flex-between;
+        flex-wrap: wrap;
+        
+        .headingSection{
+            margin-inline: 0;
+        }
+        .sortsSection{
+            @extend %flex-column;
+            @extend %width-330;
+            gap: 1rem;
+            align-self: end;
+            margin-bottom: 7rem;
+            & > :not(:first-child){
+                display: none;
+            }
+        }
+    }
+    .mainProducts{
+        @extend %flex-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        .mainProducts__sorts{
+            @extend %width-330;
+            @extend %flex-column;
+            gap: 5rem;
+        }
+        .productsList{
+            flex: 1;
+        }
+    }
+}
+
+@media screen and (max-width:320px) {
+.productsPage{
+    .productsPage__headingSection{
+        .headingSection{
+            margin-inline: 0;
+        }
+        .sortsSection{
+            gap: 1rem;
+            margin-bottom: 4rem;
+            & > :not(:first-child){
+                display: block;
+            }
+            & > :nth-child(2){
+                .sort__list{
+                    z-index: 3;
+                }
+                .btn{
+                    z-index: 4;
+                }
+            }
+            & > :nth-child(3){
+                .sort__list{
+                    z-index: 1;
+                }
+                .btn{
+                    z-index: 2;
+                }
+            }
+        }
+        
+    }
+    .mainProducts__sorts{
+        display: none !important;
+    }
+    
+}
+}
