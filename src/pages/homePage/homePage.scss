@@ -67,7 +67,8 @@
       .discountSection__p{
         @include widths(44.5rem);
       }
-      .btn{
+      >a{
+        @extend %width-330;
         margin-top: 0.6rem;
       }
     }

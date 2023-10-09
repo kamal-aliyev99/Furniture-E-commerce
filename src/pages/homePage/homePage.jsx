@@ -16,7 +16,6 @@ import titleImage from "../../assets/images/title.png"
 import useUserFetch from '../../features/dataFetch/userFetch';
 import { selectCategory, selectCollection } from '../../features/filter/filterSlice'
 
-
 const HomePage = () => {
   const {categories, collections, products} = useSelector((state) => state.productsData);
 
@@ -49,7 +48,7 @@ const HomePage = () => {
               <h1 className="titleSection__heading">THE FURNITURE THAT DEFINES YOU</h1>
               <div className="titleSection__additional">
                 <p className="titleSection__p">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
-                <Button theme="dark"><IconBag/> shop now</Button>
+                <Link to="/products"><Button theme="dark"><IconBag/> shop now</Button></Link>
               </div>
             </div>
           </div>
@@ -81,7 +80,7 @@ const HomePage = () => {
               <p className="discountSection__p">
               Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo 
               </p>
-              <Button theme="dark"><IconBag/> shop now</Button>
+              <Link to="/products"><Button theme="dark"><IconBag/> shop now</Button></Link>
             </div>
           </div>
         </section>
