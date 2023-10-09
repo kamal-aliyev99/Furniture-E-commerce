@@ -22,20 +22,17 @@ const ProductReviewPage = () => {
     const {products} = useSelector((state) => state.productsData);
     const product = products && products.filter((product) => product.id == productId)[0]; 
     const productColors = product && product.color.split(" ");
-// console.log(productId);
-    if (products && !product) {  // ? ? ?
+    if (products && !product) { 
         navigate("/*");
     }
 
     const [bigPhoto, setBigPhoto] = useState(product && product.photoUrls[0]);
     const [selectedColor, setSelectedColor] = useState(productColors && productColors[0]);
 
-
     useEffect(() => {
         setBigPhoto(product && product.photoUrls[0]);
         setSelectedColor(productColors && productColors[0])
     }, [product])
-
 
     const [ productPieces, setProductPieces ] = useState(1);
     const handleIncrease = () => {
@@ -66,7 +63,6 @@ const ProductReviewPage = () => {
           setNewCart({});
         }
       }, [newCart])
-
 
   return (
     <MainLayout>
@@ -106,7 +102,6 @@ const ProductReviewPage = () => {
                 <Pieces increase={handleIncrease} decrease={handleDecrease}> {productPieces} </Pieces>
                 <h3 className="review__price"> {product && product.price}$ </h3>
                 <div className="review__btns">
-                    {/* <Button  theme="dark"> <IconBasket white/> buy now </Button> */}
                     <Button onclick={handleAddToCart} theme="dark"> <IconBag /> add to cart </Button>
                 </div>
             </div>

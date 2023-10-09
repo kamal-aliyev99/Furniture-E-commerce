@@ -10,8 +10,7 @@
         .footer__icon{
             @include fontStyle(5.2rem, 5.8rem, 400, $font-didot);
             flex: 1;
-        }
-            
+        }     
         .footer__about{
             @extend %flex-between;
             align-items: center;
@@ -28,7 +27,6 @@
 
         }
     }
-
     .footer__copyright{
         @include fontStyle(1.2rem, 1.8rem, 400);
         margin-top: 2rem;

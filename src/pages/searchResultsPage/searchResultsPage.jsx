@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom'
 import Products from '../../components/products/products'
 import { useSelector } from 'react-redux'
 
-
 const SearchResultsPage = () => {
   const {search} = useParams();
   const {products} = useSelector((state) => state.productsData);

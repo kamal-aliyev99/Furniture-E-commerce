@@ -11,10 +11,8 @@ const ResetPasswordPage = () => {
   return (
     <LoginLayout>
         <LoginBackIcon to="/login">back</LoginBackIcon>
-
         <div className="login__main">
             <h3 className="login__heading">reset password</h3>
-
             <form className='login__form'>
                 <div className="login__form--inputs">
                 <Input type="email" placeholder="e-mail adress"/>

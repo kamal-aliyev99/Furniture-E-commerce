@@ -17,12 +17,8 @@ import useUserFetch from '../../features/dataFetch/userFetch';
 import { selectCategory, selectCollection } from '../../features/filter/filterSlice'
 
 
-
-
-
 const HomePage = () => {
   const {categories, collections, products} = useSelector((state) => state.productsData);
-
 
   useEffect(() => {
     if (document.querySelector(".titleSection")) {
@@ -36,10 +32,8 @@ const HomePage = () => {
     }
   })
 
-
   const dispatch = useDispatch();
   const handleSetCategory = (categoryId) => {
-    console.log(categoryId);
     dispatch(selectCategory( categoryId ));
   }
   const handleSetCollection = (collectionId) => {
@@ -65,7 +59,6 @@ const HomePage = () => {
           </div>
         </section>
 
-
         <div className="container">
           <Slide>
             {categories && categories.map((item) => {
@@ -76,12 +69,10 @@ const HomePage = () => {
           </Slide>
         </div>
 
-
         <div className="HomePage__aboutSection container">
           <h3 className="aboutSection__heading">about us</h3> 
           <AboutSection short/>
         </div>
-
 
         <section className="discountSection">
           <div className="discountSection__background">
@@ -95,7 +86,6 @@ const HomePage = () => {
           </div>
         </section>
 
-
         <section className="productsSection container">
           <h3 className="productsSection__heading">products</h3>
           <div className="productsSection__items">
@@ -103,7 +93,6 @@ const HomePage = () => {
           </div>
           <Link to="/products" className='seeAll'> see all</Link>
         </section>
-
 
         <section className="popularSection container">
           <h3 className="productsSection__heading">most popular</h3>
@@ -117,7 +106,6 @@ const HomePage = () => {
             })}
           </Slide>
         </section>
-
 
         <section className="collectionsSection">
           <div className="collectionsSection__background container">

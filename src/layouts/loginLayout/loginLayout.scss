@@ -40,7 +40,6 @@
                 display: flex;
                 gap: 2rem;
                 @include fontStyle (1.6rem, 2rem,500);
-                // margin-block: 1.5rem;
                 .login__help--link{
                     color: $color__primary;
                     @extend %color-primary-hover;
@@ -49,6 +48,4 @@
             }
         }
     }
-
-    
 }

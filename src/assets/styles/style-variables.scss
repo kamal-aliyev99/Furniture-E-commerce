@@ -22,7 +22,6 @@ $font-raleway: 'Raleway', sans-serif;
 }
 
 @mixin width-height ($width, $height){
-    // width: min(100%, $width);
     @include widths($width);
     height: $height;
 }

@@ -14,7 +14,6 @@ import { useSelector } from 'react-redux';
 const Header = () => {
     const [navbarMenu, setNavbarMenu] = useState(false);
     const [searchInput, setSearchInput] = useState(false);
-
     const {userCart} = useSelector((state) => state.userData);
 
   return (
@@ -33,7 +32,7 @@ const Header = () => {
         <button className='navbar__hamburger' onClick={() => setNavbarMenu(!navbarMenu)}><IconHamburger active={navbarMenu}/></button>
         <Navbar/>
       </header>
-      { searchInput &&  // must edit
+      { searchInput &&  
         <Search onClick={() => setSearchInput(!searchInput)}/>
       }
     </div>

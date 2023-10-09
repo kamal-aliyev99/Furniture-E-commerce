@@ -10,11 +10,8 @@ import useUserFetch from '../../features/dataFetch/userFetch'
 
 const LoginPage = () => {
   const { getUserData } = useUserFetch({});
-
   const [ email, setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
-
-  // const {logined, userData} = useSelector((state) => state.userData);
   
   const handleLogin = (e) => {
     e.preventDefault();
@@ -28,7 +25,6 @@ const LoginPage = () => {
   return (
     <LoginLayout>
         <LoginBackIcon to="/">home</LoginBackIcon>
-
         <div className="login__main">
             <h3 className="login__heading">log in</h3>
 
@@ -45,7 +41,6 @@ const LoginPage = () => {
                 <span className='login__help--txt'>Don’t have an account?</span>
                 <Link to="/register" className='login__help--link'>Register</Link>
             </div>
-            
         </div>
     </LoginLayout>
   )

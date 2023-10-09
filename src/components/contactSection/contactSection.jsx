@@ -7,13 +7,11 @@ import ShowMessage from '../showMessage/showMessage';
 import contactImage from "../../assets/images/contact.png"
 
 const ContactSection = () => {
-
   const [showMessage, setShowMessage] = useState(false);
   const handleContact = (e) => {
     e.preventDefault();
     setShowMessage(true);
   }
-
 
   return (
     <>

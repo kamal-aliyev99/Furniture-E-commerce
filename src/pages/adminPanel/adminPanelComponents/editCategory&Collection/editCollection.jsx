@@ -7,13 +7,10 @@ import useDataFetch from '../../../../features/dataFetch/dataFetch';
 
 const EditCollection = () => {
     const { addCollection, deleteCollection } = useDataFetch({});
-
   const {collections} = useSelector((state) => state.productsData);
-
   const [collectionName, setCollectionName] = useState("");
   const [collectionPhotoUrl, setCollectionPhotoUrl] = useState("");
   const [newCollection, setNewCollection] = useState({})
-
   const [photoUrlCheck, setPhotoUrlCheck] = useState("");
   const handleAddCollection = (e) => {
     e.preventDefault();
@@ -35,20 +32,15 @@ const EditCollection = () => {
   
   useEffect(() => {
     if (Object.keys(newCollection).length !== 0) {
-        console.log(newCollection);         // post data
-
         addCollection(newCollection);
-
         setNewCollection({});
     }
   }, [newCollection])
-
 
   const handleDelete = (collectionId) => {
     console.log(collectionId);
     deleteCollection(collectionId);
   }
-
 
   return (
     <div className="editCC">

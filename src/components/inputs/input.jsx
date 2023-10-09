@@ -23,24 +23,13 @@ const Input = (props) => {
           placeholder={props.placeholder}
           required={props.required}
         />
-
         {props.type=="password" ? <IconEye eyeSwitch={eyeSwitch} handleEyeSwitch={handleEyeSwitch}/> :null}
-
-
-
         { props.invalid &&
           <>
             <IconInputInvalid/>
             <span className='invalid-text'>{props.invalid ? props.invalid : `Invalid ${props.name}`}</span>
           </>
         }
-
-
-        {/* <IconInputInvalid/> */}
-         
-        {/* {props.name ? <IconInputInvalid /> : null} */}
-        
-        {/* <span className='invalid-text'>Invalid {props.name}</span> */}
     </div>
   )
 }

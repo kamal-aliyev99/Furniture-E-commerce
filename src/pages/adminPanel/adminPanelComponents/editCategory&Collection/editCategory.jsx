@@ -7,13 +7,10 @@ import useDataFetch from '../../../../features/dataFetch/dataFetch';
 
 const EditCategory = () => {
     const { addCategory, deleteCategory } = useDataFetch({});
-
   const {categories} = useSelector((state) => state.productsData);
-
   const [categoryName, setCategorName] = useState("");
   const [categoryPhotoUrl, setCategorPhotoUrl] = useState("");
   const [newCategory, setNewCategory] = useState({})
-
   const [photoUrlCheck, setPhotoUrlCheck] = useState("")
   const handleAddCategory = (e) => {
     e.preventDefault();
@@ -35,19 +32,14 @@ const EditCategory = () => {
   
   useEffect(() => {
     if (Object.keys(newCategory).length !== 0) {
-        // console.log(newCategory);         // post data
-
         addCategory(newCategory);
-
         setNewCategory({});
     }
   }, [newCategory])
 
-
   const handleDelete = (categoryId) => {
     deleteCategory(categoryId);
   }
-
 
   return (
     <div className="editCC">

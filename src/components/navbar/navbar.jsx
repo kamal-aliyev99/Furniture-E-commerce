@@ -6,7 +6,6 @@ const Navbar = () => {
   const currentPathname = window.location.pathname;
   const firstPath = currentPathname.split("/")[1];
 
-
   return (
     <nav className='navbar'>
         <Link to="/" className={firstPath == "" ? "currentPath" : ""}>home</Link>

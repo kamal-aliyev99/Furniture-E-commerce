@@ -7,10 +7,7 @@ import Card from '../cards/card';
 const Slide = ({children}) => {
     const parentRef = useRef(null);    
     const [ continueScroll, setContinueScroll ] = useState(true);
-
-    const itemsCount = React.Children.count(children); // ? ? ?
-    // console.log(itemsCount);
-
+    const itemsCount = React.Children.count(children);
     if(parentRef.current) {
       var scrollWidth = (parentRef.current.scrollWidth + 20)/ itemsCount;
     }
@@ -38,7 +35,7 @@ const Slide = ({children}) => {
       document.body.style.overflow = 'hidden';
       document.body.style.marginRight = "1.3rem";
     };
-  
+    
     const handleMouseLeave = () => {
       document.body.style.overflow = '';
       document.body.style.marginRight = "0";

@@ -13,15 +13,10 @@ import { useParams } from 'react-router-dom'
 const ProductsPage = () => {
   const {categoryName, collectionName} = useParams();
   const {images, categories, collections, products} = useSelector((state) => state.productsData);
-
-
-
   const selectedCollection = useSelector((state) => state.filter.selectedCollection);
   const selectedCategory = useSelector((state) => state.filter.selectedCategory);
-
   const collectionFilteredProducts = selectedCollection != "all" ? products.filter((product) => product.collection.id == selectedCollection) : products;
   const filteredProducts = selectedCategory != "all" ? collectionFilteredProducts.filter((product) => product.category.id == selectedCategory) : collectionFilteredProducts;
-
 
   return (
     <MainLayout>

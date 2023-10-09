@@ -57,7 +57,6 @@ const AddProduct = () => {
   const [stock, setStock] = useState("")
   const [category, setCategory] =useState("")
   const [collection, setCollection] =useState("")
-
   const [addPhoto, setAddPhoto] = useState("")
   const [addPhotos, setAddPhotos] = useState([])
   const [photoUrlCheck, setPhotoUrlCheck] = useState("")
@@ -77,7 +76,6 @@ const AddProduct = () => {
   const handleRemovePhotos = (key) => {
     setAddPhotos(() => addPhotos.filter((i,k) => k !== key))
   }
-  
 
   return (
     <div className="addProduct">

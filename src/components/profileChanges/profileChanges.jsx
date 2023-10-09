@@ -8,7 +8,6 @@ import useUserFetch from '../../features/dataFetch/userFetch'
 const ProfileChanges = () => {
   const {userData} = useSelector((state) => state.userData);
   const { saveUserChanges } = useUserFetch({});
-
   const [ changedData, setChangedData ] = useState({});
   const [ name, setName ] = useState(Object.keys(userData).length !== 0 && userData.fullName.split(" ")[0]);
   const [ surname, setSurname ] = useState(Object.keys(userData).length !== 0 && userData.fullName.split(" ")[1]);
@@ -45,8 +44,6 @@ const ProfileChanges = () => {
       console.log(changedData);
     }
   }, [changedData])
-
-
 
   return (
     <form className="profileChanges" onSubmit={handleSaveChanges}>

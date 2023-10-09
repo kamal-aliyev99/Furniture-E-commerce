@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 const Card = ({product}) => {
   const navigate = useNavigate();
   const { addProductToWishlist, removeProductFromWishlist } = useUserFetch({});
-
   const {logined, userData, userWishlist, userCart} = useSelector((state) => state.userData);
   const [wish, setWish] = useState(userWishlist.includes(product.id));
   useEffect(() => {

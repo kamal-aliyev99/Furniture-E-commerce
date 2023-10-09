@@ -10,7 +10,6 @@ const NewPasswordPage = () => {
   return (
     <LoginLayout>
         <LoginBackIcon>back</LoginBackIcon>
-
         <div className="login__main">
             <h3 className="login__heading">new password</h3>
 
@@ -21,8 +20,6 @@ const NewPasswordPage = () => {
                 </div>
                 <Button theme="dark">submit</Button>
             </form>
-
-           
             
         </div>
     </LoginLayout>

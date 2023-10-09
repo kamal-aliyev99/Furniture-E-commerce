@@ -39,7 +39,6 @@ const ShoppingCartPage = () => {
     }
   }
 
-
   const handleRemoveFromCart = (e, productId) => {
     e.preventDefault;
     removeFromCart(productId);
@@ -71,7 +70,6 @@ const ShoppingCartPage = () => {
                     }
                 </div>
                 
-
                 <aside className="summary">
                     <h4 className="summary__heading"> summary </h4>
                     <div className="summary__items">

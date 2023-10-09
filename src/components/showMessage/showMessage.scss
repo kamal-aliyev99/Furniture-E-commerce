@@ -28,7 +28,6 @@
             font-size: 2.6rem;
             @include absolute("top", "right", 1.5rem, 1.5rem);
         }
-
         .btn{
             width: 21.4rem ;
         }
@@ -37,7 +36,6 @@
 
 @media screen and (max-width:320px) {
     .showMessage_background{
-    
         .showMessage{
             padding: 6rem min(1.6rem, 5%) 5.3rem;
         }

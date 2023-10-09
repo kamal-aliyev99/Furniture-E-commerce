@@ -10,14 +10,12 @@ import useUserFetch from '../../features/dataFetch/userFetch'
 
 const RegisterPage = () => {
   const { registerUserData } = useUserFetch({});
-
   const [ newUser, setNewUser ] = useState({});
   const [ fullName, setFullName ] = useState("");
   const [ email, setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ repeatPassword, setRepeatPassword ] = useState("");
-  const [ invalidRepeatPassword, setInvalidRepeatPassword] = useState("")
-
+  const [ invalidRepeatPassword, setInvalidRepeatPassword] = useState("");
   const handleRegister = (e) => {
     e.preventDefault();
     if (password != repeatPassword) {
@@ -47,14 +45,11 @@ const RegisterPage = () => {
     }
   }, [newUser])
 
-
   return (
     <LoginLayout>
         <LoginBackIcon to="/">home</LoginBackIcon>
-
         <div className="login__main">
             <h3 className="login__heading">Register</h3>
-
             <form className='login__form' onSubmit={handleRegister}>
                 <div className="login__form--inputs">
                 <Input value={fullName} onChange={(e) => setFullName(e.target.value)} name="fullName" type="text" placeholder="name surname" required/>
@@ -69,7 +64,6 @@ const RegisterPage = () => {
                 <span className='login__help--txt'>Already have an account?</span>
                 <Link to="/login" className='login__help--link'>Log in</Link>
             </div>
-            
         </div>
     </LoginLayout>
   )

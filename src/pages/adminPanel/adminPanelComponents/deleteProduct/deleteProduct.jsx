@@ -8,14 +8,10 @@ import useDataFetch from '../../../../features/dataFetch/dataFetch';
 
 const DeleteProduct = () => {
   const {products} = useSelector((state) => state.productsData);
-
   const { deleteProduct } = useDataFetch({});
-
   const handleDelete = (productId) => {
-    // console.log(productId);
     deleteProduct(productId);
   }
-
 
   return (
     <div className="deleteProduct">

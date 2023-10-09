@@ -41,7 +41,7 @@
     }
 
     .review__text{
-        @extend %width-680;  // dinamic
+        @extend %width-680;  
         @extend %flex-column;
         justify-content: space-between;
         gap: 3rem;
@@ -87,9 +87,7 @@
     }
 }
 
-
 @media screen and (max-width:320px) {
-
     .reviewSection{
         @extend %flex-between;
         gap: 3rem;

@@ -10,9 +10,9 @@ const LoginLayout = ({children}) => {
   const {logined, userData} = useSelector((state) => state.userData);
   const navigate = useNavigate();
   const lastPathName = sessionStorage.getItem("pathName");
-
   const email = localStorage.getItem("email");
   const password = localStorage.getItem("password");
+  
   useEffect(() => {
       if (email && password && !logined) {
         getUserData(email, password);
@@ -20,7 +20,7 @@ const LoginLayout = ({children}) => {
     }, []);
 
   useEffect(() => {  
-    if (logined) {   //  by logined from redux 
+    if (logined) { 
         navigate(lastPathName ? lastPathName : "/");
         sessionStorage.removeItem("pathName");
     }

@@ -6,7 +6,6 @@ const Language = () => {
   const [switchLang, setSwitchLang] = useState(false);
   const handleSwitchLang = () => {
     setSwitchLang(!switchLang);
-    // console.log(switchLang);
   }
 
   const [selectedLang, setSelectedLang] = useState("az");
@@ -33,7 +32,6 @@ const Language = () => {
   return (
     <div className={`language ${switchLang ? "active" : ""}`}>
       <Languages lang={selectedLang} selected> {selectedLang} </Languages>
-
       <div className="language__div">
         {selectedLang !== "az" ? <Languages lang="az"> az </Languages> : null}
         {selectedLang !== "en" ? <Languages lang="en"> en </Languages> : null}

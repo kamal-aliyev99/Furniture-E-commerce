@@ -3,7 +3,6 @@ import './pieces.scss'
 
 const Pieces = ({children, increase, decrease, disable}) => {
     
-
   return (
     <div className="pieces">
         <button onClick={increase} disabled={disable} className="pieces__edit"> + </button>

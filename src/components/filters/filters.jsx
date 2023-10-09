@@ -7,16 +7,7 @@ import { selectCategory, selectCollection } from '../../features/filter/filterSl
 const Filters = ({children, filterItems, pathFilterName}) => {
   const dispatch = useDispatch();
   const selectedFilter = useSelector((state) => state.filter)
-
-  // const {images, categories, collections, products} = useSelector((state) => state.productsData);
-
   const filterName = filterItems && Object.keys(filterItems[0])[1];
-
-  // console.log(pathFilterName);
-
-
-
-
   const FilterItem = ({children, value}) => {
 
     const handleFilterChange = (filterId) => {
@@ -35,7 +26,7 @@ const Filters = ({children, filterItems, pathFilterName}) => {
           checked={
             Object.keys(filterItems[0])[1] == "categoryName" && selectedFilter.selectedCategory == value || 
             Object.keys(filterItems[0])[1] == "collectionName" && selectedFilter.selectedCollection == value
-          }  // edit var
+          }  
           onChange={(e) => handleFilterChange(e.target.value)} 
         />
         <IconCheckbox checked={
@@ -46,9 +37,6 @@ const Filters = ({children, filterItems, pathFilterName}) => {
       </label>
     )
   }
-
-
-
 
   return (
     <div className="filter">

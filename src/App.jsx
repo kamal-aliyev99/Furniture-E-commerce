@@ -24,14 +24,10 @@ import ShoppingCartPage from './pages/shoppingCartPage/shoppingCartPage'
 
 function App() {
   const { productsData, loading, getProducts, getProductsError } = useDataFetch({});
-
   useEffect(() => {
     getProducts();
   }, []);
-
-
   
-
   return (
     <>
 
@@ -42,7 +38,6 @@ function App() {
         <Route path='/new-password' Component={NewPasswordPage}/>
         <Route path='/reset-password' Component={ResetPasswordPage}/>
         <Route path='/verification' Component={VerificationPage}/>
-
         <Route path='*' Component={ErrorPage}/>
         <Route path='/' Component={HomePage}/>
         <Route path='/about' Component={AboutPage}/>
@@ -55,11 +50,7 @@ function App() {
         <Route path='/products/:productId' Component={ProductReviewPage}/>
         <Route path='/myAccount' Component={AccountPage}/>
         <Route path='/shoppingCart' Component={ShoppingCartPage}/>
-        
-
-
         <Route path='/adminPanel' Component={AdminPanel}/>
-
         </Routes>
       </BrowserRouter>
     </>

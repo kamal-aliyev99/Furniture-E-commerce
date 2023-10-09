@@ -24,41 +24,6 @@ const AdminPanel = () => {
         setPassword("");
     }
 
-
-    // const [testData, setTestData] = useState([]);
-
-    // const testFetch = async () => {
-    //     fetch("http://localhost:8080/wishlist/user-wishlist/3")
-    //         .then((res) => {
-    //             if (!res.ok) {
-    //                 throw new Error("HTTP Error Code: " + res.status);
-    //             }
-    //             return res.json();
-    //         })
-    //         .then((data) => {
-    //             // Verileri kullanabilir veya işleyebilirsiniz
-    //             setTestData(data);
-    //             // console.log(data);
-    //         })
-    //         .catch((error) => {
-    //             // Hata yakalanırsa burada işlenir
-    //             console.error(error);
-    //         });
-    // };
-
-
-    // console.log(testData);
-    
-
-    // useEffect(() => {
-    //     testFetch();
-    // }, [])
-
-
-
-
-
-
     const [addProductSection, setAddProductSection] = useState(false);
     const [deleteProductSection, setDeleteProductSection] = useState(false);
     const [categorySection, setCategorySection] = useState (false);
@@ -125,8 +90,7 @@ const AdminPanel = () => {
             </section>
 
         </div>
-    :
-         
+    :       
         <div className="adminPanel__login--background">
             <div className='adminPanel__login container'>
                 <LoginBackIcon to="/">home</LoginBackIcon>

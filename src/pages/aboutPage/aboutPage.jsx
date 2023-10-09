@@ -10,9 +10,7 @@ const AboutPage = () => {
     <MainLayout>
       <div className='aboutPage container'>
           <PathLocations/>
-          
           <PagesHeadingSection heading="about us"/>
-          
           <AboutSection/>
           <div className="statistics">
             <div className="statistics__items">

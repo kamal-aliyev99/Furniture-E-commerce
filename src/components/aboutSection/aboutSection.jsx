@@ -8,7 +8,6 @@ import aboutImage from '../../assets/images/about.png'
 const AboutSection = ({short}) => {
   const images = useSelector((state) => state.productsData.images);
 
-
   return (
     <section className="aboutSection">
         <div className="aboutSection__items">

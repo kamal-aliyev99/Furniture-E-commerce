@@ -25,7 +25,6 @@ const Wishlist = () => {
         }
     }
 
-
   return (
     <div className="wishlist">
         {   windowWidth > 320 ?

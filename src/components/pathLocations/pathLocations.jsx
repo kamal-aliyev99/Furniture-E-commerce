@@ -7,7 +7,6 @@ const PathLocations = () => {
     const {productId, search} = useParams();
     const {products} = useSelector((state) => state.productsData);
     const product = products.filter((i) => i.id == productId)[0]
-
     const currentPathname = window.location.pathname;
     const pathsAll = currentPathname.split("/");
     const paths = pathsAll.slice(1, pathsAll.length);

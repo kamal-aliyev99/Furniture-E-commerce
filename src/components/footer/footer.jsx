@@ -14,7 +14,6 @@ const Footer = () => {
             <a href='mailto:youremailhere@gmail.com'>youremailhere@gmail.com</a>
             </div>
         </div>
-
         <p className='footer__copyright'>©2022 All Right Reserved. Developed by Webcoder Agency</p>
     </footer>
   )

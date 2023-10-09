@@ -4,7 +4,7 @@
     .productsPage__headingSection{
         @extend %flex-between;
         flex-wrap: wrap;
-        
+
         .headingSection{
             margin-inline: 0;
         }
@@ -69,6 +69,5 @@
     .mainProducts__sorts{
         display: none !important;
     }
-    
-}
+  }
 }

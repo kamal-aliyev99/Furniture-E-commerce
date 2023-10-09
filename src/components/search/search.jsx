@@ -6,7 +6,6 @@ import './search.scss'
 const Search = ({onClick}) => {
     const navigate = useNavigate();
     const [search, setSearch] = useState("");
-    
     const handleSearch = (e) => {
         e.preventDefault();
         search && navigate(`/searchresults/${search}`);

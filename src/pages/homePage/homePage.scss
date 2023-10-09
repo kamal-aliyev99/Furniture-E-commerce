@@ -1,7 +1,6 @@
 @import '../../assets/styles/style-variables.scss';
 
 .homePage{
-
   .titleSection{
     @extend %flex-between;
     align-items: stretch;
@@ -45,14 +44,12 @@
     }
   }
 
-
   .HomePage__aboutSection {
     margin-top: 12.8rem !important;
     .aboutSection{
       margin-top: 5rem;
     }
   }
-
 
   .discountSection{
     background: $color__dusty-rose no-repeat 20% 64%;
@@ -82,7 +79,6 @@
     }
   }
 
-
   .productsSection{
     margin-top: 12.8rem !important;
     position: relative;
@@ -91,7 +87,6 @@
     }
 
   }
-
 
   .popularSection{
     margin-top: 12.8rem !important;
@@ -103,7 +98,6 @@
       }
     }
   }
-
 
   .collectionsSection{
     margin-top: 12rem !important;
@@ -127,7 +121,6 @@
       color: $color__primary-hover;
     }
   }
-
 
   .contactSection{
     margin-top: 12.8rem !important;
@@ -185,7 +178,6 @@
     }
   }
 
-
   .popularSection{
     margin-top: 7rem !important;
     .slide{
@@ -198,7 +190,6 @@
     }
   }
 
-
   .collectionsSection{
     margin-top: 7rem !important;
     padding-block: 4rem;
@@ -208,11 +199,9 @@
     }    
   }
 
-
   .contactSection{
     margin-top: 5rem !important;
   }
-
 
   .seeAll{
     position: static;
