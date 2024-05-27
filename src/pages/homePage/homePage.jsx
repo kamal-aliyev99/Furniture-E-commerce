@@ -18,7 +18,7 @@ import { selectCategory, selectCollection } from '../../features/filter/filterSl
 
 const HomePage = () => {
   const {categories, collections, products} = useSelector((state) => state.productsData);
-
+// console.log(products);
   useEffect(() => {
     if (document.querySelector(".titleSection")) {
       const titleHeading = document.querySelector(".titleSection__heading");

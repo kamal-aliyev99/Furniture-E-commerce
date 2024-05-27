@@ -13,6 +13,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import IconBag from '../../assets/svg/icon-bag'
 import IconBasket from '../../assets/svg/icon-basket'
 import useUserFetch from '../../features/dataFetch/userFetch'
+import ScrollToTop from '../../layouts/mainLayout/scrollToTop'
 
 const ProductReviewPage = () => {
     const navigate = useNavigate();
@@ -68,6 +69,7 @@ const ProductReviewPage = () => {
     <MainLayout>
         <div className="container">
             <PathLocations/>
+            <ScrollToTop/>
         </div>
 
         <main className="reviewSection container">
@@ -103,6 +105,7 @@ const ProductReviewPage = () => {
                 <h3 className="review__price"> {product && product.price}$ </h3>
                 <div className="review__btns">
                     <Button onclick={handleAddToCart} theme="dark"> <IconBag /> add to cart </Button>
+                    {/* checkout button */}
                 </div>
             </div>
         </main>

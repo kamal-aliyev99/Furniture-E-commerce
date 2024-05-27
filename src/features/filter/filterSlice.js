@@ -20,7 +20,7 @@ export const filterSlice = createSlice({
     },
 
     selectSort: (state, action) => {
-        console.log("test");
+      state.selectedSort = action.payload;
     },
 
     resetFilters: (state, action) => {

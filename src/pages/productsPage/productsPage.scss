@@ -29,7 +29,7 @@
             @extend %flex-column;
             gap: 5rem;
         }
-        .productsList{
+        .productsList, .no-product{
             flex: 1;
         }
     }
@@ -66,8 +66,13 @@
         }
         
     }
-    .mainProducts__sorts{
-        display: none !important;
+    .mainProducts{
+        .mainProducts__sorts{
+            display: none !important;
+        }
+        .no-product{
+            text-align: center;
+        }
     }
   }
 }

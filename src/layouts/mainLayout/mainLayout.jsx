@@ -12,7 +12,7 @@ import useUserFetch from '../../features/dataFetch/userFetch';
 const MainLayout = ({children}) => {
   const { getUserData } = useUserFetch({});
   const navigate = useNavigate();
-  const {loading, getProductsError} = useSelector((state) => state.productsData);
+  const {loading, error} = useSelector((state) => state.productsData);
   const {logined, userData, userWishlist, userCart, userId} = useSelector((state) => state.userData);
   const email = localStorage.getItem("email");
   const password = localStorage.getItem("password");
@@ -37,7 +37,7 @@ const MainLayout = ({children}) => {
       <Header/>
       { loading ?
         <LoadingPage/> :
-        getProductsError ?
+        error ?
         <FetchErrorPage/> :
         <>
           {children}
@@ -49,3 +49,9 @@ const MainLayout = ({children}) => {
 }
 
 export default MainLayout
+
+
+
+
+
+//  ScrollToTop   products and products review ? ? ?

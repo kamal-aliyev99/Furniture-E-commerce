@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setProductsData } from '../products/productsSlice'
+import { setProductsData, setErrorData } from '../products/productsSlice'
 
 
 const useDataFetch = (initialData = {}) => {
@@ -11,7 +11,7 @@ const useDataFetch = (initialData = {}) => {
   const [allCollections, setAllCollections] = useState([]);
   const apiUrl = "http://localhost:8080";
   const [getProductsError, setGetProductsError] = useState("");
-  const [getDataError, setDataError] = useState("");
+  // const [getDataError, setDataError] = useState("");
   const [loading, setLoading] = useState(true);
 
   //  G E T    A L L    P R O D U C T S
@@ -25,12 +25,13 @@ const useDataFetch = (initialData = {}) => {
             return res.json();
         })
         .then((data) => {
-            setAllProducts(data);
-            setLoading(false);
+          setAllProducts(data);
+          setLoading(false);       
         })
         .catch((error) => {
             console.error(error);
             setLoading(false);
+            setGetProductsError("error");
         });
     };
 
@@ -49,6 +50,7 @@ const useDataFetch = (initialData = {}) => {
         .catch((error) => {
             console.error(error);
             setLoading(false);
+            setGetProductsError("error");
         });
     };
 
@@ -67,6 +69,7 @@ const useDataFetch = (initialData = {}) => {
         .catch((error) => {
             console.error(error);
             setLoading(false);
+            setGetProductsError("error");
         });
     };
 
@@ -77,6 +80,8 @@ const useDataFetch = (initialData = {}) => {
   useEffect(() => {
     if (allProducts.length != 0 || allCategories.length != 0 || allCollections.length != 0) {
       dispatch(setProductsData({ allProducts, allCategories, allCollections , getProductsError, loading}));
+    } else if (getProductsError) {
+      dispatch(setErrorData({getProductsError})); 
     }
   }, [allProducts, allCategories, allCollections, getProductsError])
   

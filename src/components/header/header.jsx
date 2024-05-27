@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Language from '../language/language';
 import IconSearch from '../../assets/svg/icon-search';
 import SiteIcon from '../siteIcon/siteIcon';
@@ -8,13 +8,17 @@ import IconHamburger from '../../assets/svg/iconHamburger/iconHamburger';
 import './header.scss'
 import Navbar from '../navbar/navbar';
 import Search from '../search/search';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
+    const location = useLocation();
     const [navbarMenu, setNavbarMenu] = useState(false);
     const [searchInput, setSearchInput] = useState(false);
     const {userCart} = useSelector((state) => state.userData);
+    useEffect(() => {
+      setSearchInput(false);
+    },[location])
 
   return (
     <div className="header__backg">

@@ -17,11 +17,13 @@ const SearchResultsPage = () => {
       <div className="searchResultsPage container">
         <div className='searchResultsPage'>
           <PathLocations/>
-
-            <PagesHeadingSection heading="search results">
-              Your search results for “{search}”.
-            </PagesHeadingSection>
-            <Products products={searchResults}/>
+          <PagesHeadingSection heading="search results">
+            Your search results for “{search}”.
+          </PagesHeadingSection>
+          { searchResults.length != 0 ?
+            <Products products={searchResults}/> :
+            <h3 className='no-product'>no product</h3>
+          }
         </div> 
       </div>
     </MainLayout>

@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 const Wishlist = () => {
   const {products} = useSelector((state) => state.productsData);
   const {userWishlist} = useSelector((state) => state.userData);
+  const wishedProducts = products.filter((product) => userWishlist.includes(product.id));
   
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
@@ -27,8 +28,8 @@ const Wishlist = () => {
 
   return (
     <div className="wishlist">
-        {   windowWidth > 320 ?
-            products && products.filter((product) => userWishlist.includes(product.id)).map((product) => {
+        {   wishedProducts.length != 0 ?
+            windowWidth > 320 ? wishedProducts.map((product) => {
                 return(
                     <div className="wishlist__card" key={product.id}>
                         <div className="wishlist__card--image">
@@ -44,12 +45,13 @@ const Wishlist = () => {
                     </div>
                 )
             }) 
-            :
-            products && products.filter((product) => userWishlist.includes(product.id)).map((product) => {
+            : 
+            wishedProducts.map((product) => {
                 return (
-                    <Card product={product}/>
+                    <Card product={product} key={product.id}/>
                 )
-            })
+            })            
+            : <h3 className='no-product'>whishlist is empty</h3>
         }
     </div>
   )

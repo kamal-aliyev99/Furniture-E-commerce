@@ -23,6 +23,10 @@
             &:hover{
                 color: $color__primary-hover;
             }
+            &:has(input:checked){
+                color: $color__primary-hover;
+                font-weight: 650;
+            }
         }
         
     }

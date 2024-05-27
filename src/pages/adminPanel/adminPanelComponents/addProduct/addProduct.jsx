@@ -47,7 +47,6 @@ const AddProduct = () => {
 
 
   const {products, categories, collections} = useSelector((state) => state.productsData);
-  console.log(products);
 
   const [name, setName] =useState("")
   const [description, setDescription] =useState("")

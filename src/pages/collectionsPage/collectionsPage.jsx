@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 
 const CollectionsPage = () => {
   const collections = useSelector((state) => state.productsData.collections);
-
   const dispatch = useDispatch();
   const handleSetCollection = (collectionId) => {
     dispatch(selectCollection( collectionId ));
@@ -28,7 +27,7 @@ const CollectionsPage = () => {
             { collections &&
               collections.map((item) => {
                 return (
-                  <Link to={`/collections/${item.collectionName}`} onClick={() => handleSetCollection(item.id)} key={item.id}> <CardFolder photo={item.photo}>{item.collectionName}</CardFolder> </Link>
+                  <Link to={`/collections/products?category=all&collection=${item.id}&sort=popular`} onClick={() => handleSetCollection(item.id)} key={item.id}> <CardFolder photo={item.photo}>{item.collectionName}</CardFolder> </Link>
                 )
               })
             }
